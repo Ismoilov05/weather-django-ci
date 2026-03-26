@@ -24,8 +24,9 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run migrations
+      working-directory: weather_site
       run: python manage.py migrate
 
     - name: Run tests
-      run: |
-        python manage.py test
+      working-directory: weather_site
+      run: python manage.py test
